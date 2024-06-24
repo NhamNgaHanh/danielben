@@ -46,7 +46,8 @@ for bd in range(1,16):
                             for m in range(0,nd):
                                 pl = i+m
                                 lits.append(df.iloc[pl, 1])
-                            num_r.append(str(int(df.iloc[i-1, 1]))[-2:])
+                            #num_r.append(str(int(df.iloc[i-1, 1]))[-2:])
+                            num_r.append(df.iloc[i, 0])
                             #st.write(lits,)
                             #st.write(df.iloc[i-1, 1])
                     else:
