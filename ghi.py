@@ -53,7 +53,7 @@ for bd in range(1,16):
                         break
         #st.write("Các chỉ số hàng thỏa mãn điều kiện:")
         #st.write(str(num_r))
-    #st.write(str(num_r))
+    st.write(str(num_r))
     tl = len(num_r)
     #st.write(tl)
     st.subheader(f":red[Biên độ dao động của cầu {bd}]")
