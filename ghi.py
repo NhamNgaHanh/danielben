@@ -62,8 +62,7 @@ for bd in range(1,16):
     lon = 0
     be = 0
     if tl != 0:
-        xl = tl + 1
-        for nu in range(0,xl):
+        for nu in range(0,tl):
             kh = int(num_r[nu])
             if kh > 50:
                 lon = lon + 1
