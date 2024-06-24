@@ -17,6 +17,7 @@ bd = 1
 num_r = []
 numx = []
 numy = []
+num_d = []
 # Duyệt qua các hàng của DataFrame
 st.write("Ngày dừng lại để tính toán",df.iloc[kd, 0])
 if nd > 2:
@@ -46,15 +47,14 @@ for bd in range(1,16):
                             for m in range(0,nd):
                                 pl = i+m
                                 lits.append(df.iloc[pl, 1])
-                            #num_r.append(str(int(df.iloc[i-1, 1]))[-2:])
-                            num_r.append(df.iloc[i, 0])
+                            num_r.append(str(int(df.iloc[i-1, 1]))[-2:])
+                            num_d.append(df.iloc[i, 0])
                             #st.write(lits,)
                             #st.write(df.iloc[i-1, 1])
                     else:
                         break
         #st.write("Các chỉ số hàng thỏa mãn điều kiện:")
         #st.write(str(num_r))
-    st.write(str(num_r))
     tl = len(num_r)
     #st.write(tl)
     st.subheader(f":red[Biên độ dao động của cầu {bd}]")
@@ -72,3 +72,4 @@ for bd in range(1,16):
         st.write("Tỉ lệ ra số Bé là :",round((be/tl)*100,2),"%")
     else:
         st.write("Dữ liệu không có cầu này! Vui lòng chọn ngày cầu nhỏ hơn")
+st.write(num_d)
