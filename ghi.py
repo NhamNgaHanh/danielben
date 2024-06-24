@@ -30,6 +30,7 @@ if nd > 2:
             st.write(int(numx[u]) - int(numx[u-1]))
 st.write(str(numx),df.iloc[0, 0])
 for bd in range(1,16):
+    st.subheader(f":red[Biên độ dao động của cầu = {bd}]")
     if nd > 2:
         for i in range(1,len(df)-20):
             l = int(str(int(df.iloc[i, 1]))[-2:])  # Lấy hai ký tự cuối cùng của giá trị và chuyển thành chuỗi
@@ -57,7 +58,6 @@ for bd in range(1,16):
         #st.write(str(num_r))
     tl = len(num_r)
     #st.write(tl)
-    st.subheader(f":red[Biên độ dao động của cầu = {bd}]")
     #st.write(nd)
     lon = 0
     be = 0
