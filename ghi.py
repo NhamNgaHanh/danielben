@@ -57,7 +57,7 @@ for bd in range(1,16):
         #st.write(str(num_r))
     tl = len(num_r)
     #st.write(tl)
-    st.subheader(f":red[Biên độ dao động của cầu {bd}]")
+    st.subheader(f":red[Biên độ dao động của cầu = {bd}]")
     #st.write(nd)
     lon = 0
     be = 0
