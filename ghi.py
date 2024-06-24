@@ -50,7 +50,7 @@ for bd in range(1,16):
                             num_r.append(str(int(df.iloc[i-1, 1]))[-2:])
                             st.write(df.iloc[i, 0])
                             #st.write(lits,)
-                            #st.write(df.iloc[i-1, 1])
+                            st.write(df.iloc[i-1, 1])
                     else:
                         break
         #st.write("Các chỉ số hàng thỏa mãn điều kiện:")
