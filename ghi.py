@@ -33,7 +33,7 @@ for bd in range(1,16):
     st.subheader(f":red[Biên độ dao động của cầu = {bd}]")
     if nd > 2:
         kml = kd + 1
-        st.write(df.iloc[kml, 0],df.iloc[kd, 1])
+        st.write(df.iloc[kd-1, 0],df.iloc[kd-1, 1])
         for i in range(kml,len(df)-20):
             l = int(str(int(df.iloc[i, 1]))[-2:])  # Lấy hai ký tự cuối cùng của giá trị và chuyển thành chuỗi
             l1 = int(str(int(df.iloc[i + 1, 1]))[-2:])
