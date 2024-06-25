@@ -19,7 +19,7 @@ numx = []
 numy = []
 num_d = []
 # Duyệt qua các hàng của DataFrame
-st.write("Ngày dừng lại để tính toán",df.iloc[kd, 0])
+#st.write("Ngày dừng lại để tính toán",df.iloc[kd, 0])
 if nd > 2:
     for u in range(0, nd):
         x_u = str(int(df.iloc[u+kd, 1]))[-2:]
@@ -28,11 +28,12 @@ if nd > 2:
         numy.append(y_u)
         if u > 0:
             st.write(int(numx[u]) - int(numx[u-1]))
-st.write(str(numx),df.iloc[0, 0])
+st.write(str(numx))
 for bd in range(1,16):
     st.subheader(f":red[Biên độ dao động của cầu = {bd}]")
     if nd > 2:
         kml = kd + 1
+        st.write(df.iloc[kml, 0]
         for i in range(kml,len(df)-20):
             l = int(str(int(df.iloc[i, 1]))[-2:])  # Lấy hai ký tự cuối cùng của giá trị và chuyển thành chuỗi
             l1 = int(str(int(df.iloc[i + 1, 1]))[-2:])
