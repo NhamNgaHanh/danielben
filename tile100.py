@@ -31,7 +31,7 @@ if st.button("Cập nhật dữ liệu"):
     time = str(today - df.iloc[0, 0])
     time1 = int(str(time[:2]))
     st.write(time1)
-     st.write(time)
+    st.write(time)
     if time1 > 1:
         maeday = str(df.iloc[0, 0])
         date_object1 = datetime.strptime(maeday, '%Y-%m-%d %H:%M:%S')
