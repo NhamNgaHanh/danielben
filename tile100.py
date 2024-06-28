@@ -71,7 +71,7 @@ with tab2:
     numx = []
     ff = pd.DataFrame(columns=['Lớn', 'Bé'])
     for bd in range (h,h+20):
-        for i in range(h,h+k):
+        for i in range(bd,bd+k):
             l = int(str(int(df.iloc[i, 1]))[-2:])  # Lấy hai ký tự cuối cùng của giá trị và chuyển thành chuỗi
             if l >= 50:
                 num_r.append(1)
