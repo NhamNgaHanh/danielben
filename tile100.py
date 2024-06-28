@@ -27,11 +27,8 @@ def write_to_excel(ks, row, d, excel_file):
 if st.button("Cập nhật dữ liệu"):
     today = datetime.now()
     st.subheader(df.iloc[0, 0])
-    st.subheader(today)
     time = str(today - df.iloc[0, 0])
     time1 = int(str(time[:2]))
-    st.write(time1)
-    st.write(time)
     if time1 > 1:
         maeday = str(df.iloc[0, 0])
         date_object1 = datetime.strptime(maeday, '%Y-%m-%d %H:%M:%S')
@@ -112,5 +109,10 @@ with tab1:
         else:
             numx.append(1)
     if nd != 0:
-        st.write(round((len(num_r) / (k - j)) * 100, 2))
-        st.write(round((len(numx) / (k - j)) * 100, 2))
+        col1, col2 = st.columns([0.5, 0.5], gap="small")
+        with col1:
+            st.write("Tỉ lệ ra số lớn: ",round((len(num_r) / (k - j)) * 100, 2))
+            st.write("Tỉ lệ ra số bé: "round((len(numx) / (k - j)) * 100, 2))
+        with col2:
+            st.subheader(df.iloc[j-1, 1])
+            st.subheader(df.iloc[j-1, 1]
