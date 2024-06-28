@@ -78,8 +78,8 @@ with tab2:
             else:
                 numx.append(1)
         if nd != 0:
-            big = round((len(num_r)/(k-bd))*100,2)
-            small = round((len(numx)/(k-bd))*100,2)
+            big = round((len(num_r)/(k-1))*100,2)
+            small = round((len(numx)/(k-1))*100,2)
             ff = ff._append({'Lớn': big, 'Bé': small},ignore_index=True)
         k = k + 1
         num_r = []
