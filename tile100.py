@@ -115,4 +115,4 @@ with tab1:
             st.write("Tỉ lệ ra số bé: ",round((len(numx) / (k - j)) * 100, 2))
         with col2:
             st.subheader(df.iloc[j-1, 0])
-            st.subheader(df.iloc[j-1, 1])
+            st.subheader(df.iloc[j-1, 1],"Kết quả ngày tiếp theo:",df.iloc[j, 1])
