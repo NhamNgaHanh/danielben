@@ -112,7 +112,7 @@ with tab1:
         col1, col2 = st.columns([0.5, 0.5], gap="small")
         with col1:
             st.write("Tỉ lệ ra số lớn: ",round((len(num_r) / (k - j)) * 100, 2))
-            st.write("Tỉ lệ ra số bé: "round((len(numx) / (k - j)) * 100, 2))
+            st.write("Tỉ lệ ra số bé: ",round((len(numx) / (k - j)) * 100, 2))
         with col2:
             st.subheader(df.iloc[j-1, 1])
             st.subheader(df.iloc[j-1, 1]
