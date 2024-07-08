@@ -24,12 +24,12 @@ def write_to_excel(ks, row, d, excel_file):
     with pd.ExcelWriter(excel_file, mode="a", engine="openpyxl", if_sheet_exists='overlay') as writer:
         gf.to_excel(writer, startrow=row1, startcol=d, index=False, header=False)
     return
-if st.button("Cập nhật dữ liệu"):
+while True:
     today = datetime.now()
-    st.subheader(df.iloc[0, 0])
     time = str(today - df.iloc[0, 0])
     time1 = int(str(time[:2]))
-    if time1 > 1:
+    if time1 != 1:
+        st.progress(time1, text="Đang cập nhật dữ liệu")
         maeday = str(df.iloc[0, 0])
         date_object1 = datetime.strptime(maeday, '%Y-%m-%d %H:%M:%S')
         date_object2 = date_object1 + timedelta(days=1)
@@ -37,16 +37,13 @@ if st.button("Cập nhật dữ liệu"):
         maeday1 = maeday2[:10]
         date_object = datetime.strptime(maeday1, '%Y-%m-%d')
         new_date_string = date_object.strftime('%d-%m-%Y')
-        url = 'https://3ketqua.net/xo-so-mien-bac.php?ngay='+new_date_string
+        url = 'https://ketqua01.net/xo-so-mien-bac.php?ngay='+new_date_string
         response = requests.get(url)
         if response.status_code == 200:
             html_content = response.content
         soup = BeautifulSoup(html_content, 'html.parser')
         elements_with_id = soup.find(id='rs_0_0')
         div_text = elements_with_id.text
-        #element_dict = json.loads(elements_with_id)
-        #st.write(f"ID: {element_dict['id']}")
-        #st.write(f"Name: {element_dict['name']}")
         new_row = {}
         new_row_df = pd.DataFrame([new_row])
         kf = pd.concat([df.iloc[:0], new_row_df, df.iloc[0:]], ignore_index=True)
@@ -57,6 +54,13 @@ if st.button("Cập nhật dữ liệu"):
         ks1 = int(div_text)
         st.session_state["ex"] = ks1
         write_to_excel(ks1, 0, 1, excel_file1)
+        time1 = time1-1
+        df = pd.read_excel("./Book1.xlsx")
+        st.rerun()
+    if time1 == 1:
+        df = pd.read_excel("./Book1.xlsx")
+        st.subheader(df.iloc[0, 0])
+        break
 h = int(st.number_input("Ngày bắt đầu đếm dữ liệu", step = 1))
 tab1, tab2 = st.tabs(["TỔNG HỢP", "CHỌN NGÀY"])
 with tab2:
